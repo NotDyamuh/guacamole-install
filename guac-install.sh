@@ -291,8 +291,8 @@ elif [[ $( apt-cache show tomcat7 2> /dev/null | egrep "Version: 7" | wc -l ) -g
     echo -e "${BLUE}Found tomcat7 package...${NC}"
     TOMCAT="tomcat7"
 else
-    echo -e "${RED}Failed. Can't find Tomcat package${NC}" 1>&2
-    exit 1
+    echo -e "${RED}Can't find Tomcat package. Installing Tomcat9.${NC}" 1>&2
+    sudo apt install tomcat9
 fi
 
 # Uncomment to manually force a Tomcat version
